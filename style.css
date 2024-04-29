@@ -275,8 +275,6 @@ body {
   }
   .select{
     width: 300px;
-    /* border: 2px solid white; */
-
   }
   .box{
     height: 100px;
@@ -320,7 +318,7 @@ body {
     /* border: 2px solid wheat; */
   }
  .Congratulation{
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 5px;
   height: 30px;
   width: 300px;
@@ -331,7 +329,7 @@ body {
   }
   25% {
     background-color: rgb(250, 250, 91);
-    width: 150px;
+    width: 180px;
   }
   50% {
     background-color: rgb(250, 250, 91);
@@ -344,7 +342,7 @@ body {
   }
 }
 .newGame{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 5px;
 }
 .reset{
