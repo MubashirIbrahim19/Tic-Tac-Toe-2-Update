@@ -270,6 +270,10 @@ body {
 }
 
 @media(min-width : 375px) and (max-width:440px) {
+  .boxes{
+    height: 370px;
+  width: 380px;
+  }
   .option{
     font-size: 27px;
   }
