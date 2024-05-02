@@ -271,8 +271,9 @@ body {
 
 @media(min-width : 360px) and (max-width:440px) {
   .boxes{
-    height: 370px;
-  width: 380px;
+    height: 360px;
+    width: 380px;
+  /* border: 2px solid wheat; */
   }
   .option{
     font-size: 27px;
@@ -297,11 +298,12 @@ body {
   }
   .text{
     position: relative;
-    bottom: 0px;
+    /* border: 2px solid wheat; */
   }
   .text1{
     font-size: 35px;
     width: 300px;
+
   }
   .game{
     height: 290px;
@@ -360,4 +362,212 @@ body {
 }
 }
 
+
+@media (min-width: 480px) and (max-width: 650px) {
+  *{
+    margin:0;
+    padding: 0;
+  }
+  .boxes {
+  height: 360px;
+  width: 450px;
+  /* border: 2px solid white; */
+  }
+  .option {
+  font-size: 32px;
+  }
+  .select {
+  width: 300px;
+  }
+  .box {
+  height: 110px;
+  width: 110px;
+  font-size: 70px;
+  }
+  .startGame,
+  .startGame2 {
+  height: 50px;
+  font-size: 35px;
+  }
+  .choice1:focus-within {
+  border: 6px solid green;
+  }
+  .choice2:focus-within {
+  border: 6px solid orange;
+  }
+  .text {
+  position: relative;
+  bottom: 0px;
+  /* border: 2px solid white; */
+  }
+  .text1 {
+  font-size: 40px;
+  width: 300px;
+  }
+
+  .game {
+  height: 290px;
+  width: 360px;
+  gap: 12px;
+  /* border: 2px solid white; */
+  }
+  .button {
+  height: 98px;
+  width: 98px;
+  font-size: 55px;
+  }
+  .button:hover {
+  border: 3px solid yellow;
+  }
+  .Congratulation2 {
+  height: 110px;
+  }
+  .Congratulation {
+  font-size: 1.9rem;
+  padding: 5px;
+  height: 30px;
+  width: 390px;
+  font-weight: 600;
+  }
+  @keyframes congra {
+  0% {
+  background-color: rgb(250, 250, 91);
+  }
+  25% {
+  background-color: rgb(250, 250, 91);
+  width: 240px;
+  }
+  50% {
+  background-color: rgb(250, 250, 91);
+  }
+  75% {
+  background-color: rgb(250, 250, 91);
+  }
+  100% {
+  background-color: rgb(250, 250, 91);
+  }
+  }
+  .newGame {
+  font-size: 1.7rem;
+  padding: 5px;
+  font-weight: 580;
+  }
+  .reset {
+  font-size: 1.7rem;
+  font-weight: 580;
+  }
+  .back {
+  font-size: 1rem;
+  position: relative;
+  top: 13px;
+  }
+  }
+
+
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    *{
+      margin:0;
+      padding: 0;
+    }
+    .boxes {
+    height: 360px;
+    width: 680px;
+    /* border: 2px solid white; */
+    }
+    .option {
+    font-size: 50px;
+    }
+    .select {
+    width: 300px;
+    /* border: 2px solid white; */
+    }
+    .box {
+    height: 130px;
+    width: 130px;
+    font-size: 80px;
+    }
+    .startGame,
+    .startGame2 {
+    height: 55px;
+    font-size: 48px;
+    }
+    .choice1:focus-within {
+    border: 8px solid green;
+    }
+    .choice2:focus-within {
+    border: 8px solid orange;
+    }
+    .text {
+    position: relative;
+    bottom: 0px;
+    /* border: 2px solid white; */
+    }
+    .text1 {
+    font-size: 50px;
+    width: 400px;
+    }
+    .container{
+      height: 60vh;
+      /* border: 2px solid white; */
+    }
+    .game {
+    height: 290px;
+    width: 460px;
+    gap: 15px;
+    /* border: 2px solid white; */
+    }
+    .button {
+    height: 110px;
+    width: 110px;
+    font-size: 65px;
+    }
+    .button:hover {
+    border: 5px solid yellow;
+    }
+    .Congratulation2 {
+    height: 130px;
+    }
+    .Congratulation {
+    font-size: 3rem;
+    padding: 5px;
+    height: 55px;
+    width: 650px;
+    font-weight: 600;
+    }
+    @keyframes congra {
+    0% {
+    background-color: rgb(250, 250, 91);
+    }
+    25% {
+    background-color: rgb(250, 250, 91);
+    width: 340px;
+    }
+    50% {
+    background-color: rgb(250, 250, 91);
+    }
+    75% {
+    background-color: rgb(250, 250, 91);
+    }
+    100% {
+    background-color: rgb(250, 250, 91);
+    }
+    }
+    .newGame {
+    font-size: 2.7rem;
+    padding: 5px;
+    font-weight: 580;
+    }
+    .reset {
+    font-size: 1.7rem;
+    font-weight: 580;
+    position: relative;
+    top: 50px;
+    }
+    .back {
+    font-size: 1rem;
+    position: relative;
+    top: 60px;
+    }
+    }
 
