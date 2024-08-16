@@ -8,12 +8,9 @@ const text = document.querySelector(".text");
 const choice1 = document.querySelector(".choice1");
 const choice2 = document.querySelector(".choice2");
 const buttons = document.querySelector(".boxes");
-const startGame = document.querySelector(".startGame"); 
-const startGame2 = document.querySelector(".startGame2"); 
+const startGame = document.querySelector(".startGame");
+const startGame2 = document.querySelector(".startGame2");
 const back = document.querySelector(".back");
-// const option = document.querySelector(".option");
-
-// const input = document.querySelectorAll(".name1");
 
 let turn = true;
 let count = 0;
@@ -62,7 +59,6 @@ choice1.addEventListener("click", () => {
     turn = true;
     console.log(turn);
   } else {
-    // else wala tb chaly ga jb choice1 ko click kiya tb turn hoga true or phir jb choice2 ko click kiya tb turn hojaye ga false or phir jb choice2 ko click krnay kay baad phir choice1 ko click karuga tb turn hoga false to tb if wala to nhi chalega agr if nhi chlaye ga to turn true kaisay hoga is liye turn true krnay kay liye else mein likh diya turn true hojaye jb choice2 say choice1 ko click kary to
     turn = true;
     console.log(turn);
   }
@@ -76,9 +72,7 @@ choice2.addEventListener("click", () => {
   }
 });
 
-
 boxes.forEach((box, index) => {
-
   box.addEventListener("click", () => {
     console.log(`Count = ${count}`);
     count++;
@@ -97,8 +91,7 @@ boxes.forEach((box, index) => {
     }
     moves.push(index);
     box.disabled = true;
-    // let isWinner = true;
-    // console.log(`isWinner = ${isWinner}`);
+
     if (count === 9) {
       draw();
     }
@@ -108,22 +101,18 @@ boxes.forEach((box, index) => {
 
 let winnerChecker = (index) => {
   for (let pattern of winPattern) {
-    // console.log(pattern[0],pattern[1],pattern[2]);
     let pos1 = boxes[pattern[0]].innerText;
     let pos2 = boxes[pattern[1]].innerText;
     let pos3 = boxes[pattern[2]].innerText;
-    // innerText is liye likha kyukay jb button pr click kiya jaye ga to innerText mein upper likha hay wo likha howa aajaye ga jaisay ki mein nay click to upper pahly X likha hay to yaha innerText mein X aajaye ga or jb yaha X aaye to neechy condion rakhi hay kay pos1 ===pos2 === pos3 to wo is tarah chalay gee kay jb usay pata hoga kay is box ye likha howa hay
-    // console.log(pos1,pos2,pos3);
+
     if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
       if (pos1 === pos2 && pos2 === pos3) {
-        // container2.classList.remove('hide');
         let value = moves.push(index);
         congratulation.style.color = "green";
         container.classList.add("hide");
         container2.classList.remove("hide");
         text.classList.add("hide");
         congratulation.innerText = pos1 + " \t Won";
-        // congratulation.style.border = '5px solid white';
       }
     }
   }
@@ -138,14 +127,13 @@ const draw = () => {
   count = 0;
 };
 
-
-const dublicateStartGame = ()=>{
+const dublicateStartGame = () => {
   startGame2.classList.remove("hide");
-  startGame2.innerText="START GAME";
+  startGame2.innerText = "START GAME";
   startGame2.style.backgroundColor = "rgb(249, 249, 66)";
   startGame2.style.color = "black";
   startGame2.style.cursor = "pointer";
-}
+};
 const newGamereset = () => {
   for (let box of boxes) {
     container2.classList.add("hide");
@@ -160,27 +148,16 @@ const newGamereset = () => {
   dublicateStartGame();
 };
 
-
 newGame.addEventListener("click", newGamereset);
 reset.addEventListener("click", newGamereset);
 
-//  let pos1 = winPattern[0][0];
-//  let pos2 = winPattern[0][1];
-//  let pos3 = winPattern[0][2];
-//  let pos4 = winPattern[1][1];
-//  let pos5 = winPattern[1][2];
-//  let pos6 = winPattern[2][1];
-//  let pos7 = winPattern[2][2];
-//  let pos8 = winPattern[3][2];
-//  let pos9 = winPattern[4][1];
-
 back.addEventListener("click", () => {
   if (moves.length > 0) {
-    const lastIndex = moves.pop(); // Get the last move
+    const lastIndex = moves.pop();
     const lastBox = boxes[lastIndex];
-    lastBox.innerText = ""; // Clear the box
-    lastBox.disabled = false; // Enable the box
-    count--; // Decrement count
-    turn = !turn; // Switch turn
+    lastBox.innerText = "";
+    lastBox.disabled = false;
+    count--;
+    turn = !turn;
   }
 });
