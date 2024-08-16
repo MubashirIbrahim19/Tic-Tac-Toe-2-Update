@@ -237,6 +237,8 @@ body {
   }
   .select {
     width: 300px;
+    border: 2px solid white;
+
   }
   .box {
     height: 100px;
@@ -446,7 +448,7 @@ body {
   }
   .text {
     position: relative;
-    bottom: 0px;
+    bottom: 40px;
   }
   .text1 {
     font-size: 50px;
