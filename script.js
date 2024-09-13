@@ -96,21 +96,17 @@ boxes.forEach((box, index) => {
   box.addEventListener("click", () => {
     count++;
     if (turn) {
-      console.log(index);
-
       box.innerText = userChoice1;
 
       box.style.color = "#f8ac07";
       turn = false;
     } else {
-      console.log(index);
-
       box.innerText = userChoice2;
 
       box.style.color = "#2c6fff";
       turn = true;
     }
-
+    moves.push(index);
     box.disabled = true;
     if (count === 9) {
       draw();
@@ -132,6 +128,7 @@ let winnerChecker = () => {
         text.classList.add("hide");
         if (pos1 === userChoice1) {
           congratulation.innerText = `${player1} Won`;
+          congratulation.style.color = "green";
         } else {
           congratulation.innerText = `${player2} Won`;
           congratulation.style.color = "red";
@@ -175,9 +172,9 @@ reset.addEventListener("click", newGamereset);
 back.addEventListener("click", () => {
   if (moves.length > 0) {
     const lastIndex = moves.pop();
-
-    boxes[lastIndex].innerText = "";
-    boxes[lastIndex].disabled = false;
+    const lastBox = boxes[lastIndex];
+    lastBox.innerText = "";
+    lastBox.disabled = false;
     count--;
     turn = !turn;
   }

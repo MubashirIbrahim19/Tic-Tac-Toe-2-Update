@@ -307,12 +307,12 @@ body {
     position: relative;
     top: 12px;
   }
-  .yourNamename {
+  .player1Input {
     position: relative;
     left: 44px;
     border: 2px solid white;
   }
-  .opponantNamename {
+  .player2Input {
     position: relative;
     right: 13px;
   }
@@ -445,10 +445,14 @@ body {
     position: relative;
     top: 12px;
   }
-  .yourNamename {
+  .player1Input {
     position: relative;
     right: 20px;
     border: 2px solid white;
+  }
+  .player2Input{
+    position: relative;
+    right: 7px;
   }
   .boxes {
     height: 370px;
@@ -593,7 +597,7 @@ body {
     position: relative;
     top: 12px;
   }
-  .yourNamename {
+  .player1Input{
     position: relative;
     right: 120px;
   }
@@ -618,7 +622,7 @@ body {
   }
   .choice2 {
     position: relative;
-    left: 15%;
+    left: 12%;
   }
   .boxes {
     height: 360px;
@@ -637,7 +641,7 @@ body {
     height: 55px;
     font-size: 38px;
     position: relative;
-    right: 0px;
+    right: 23px;
     bottom: 230px;
   }
   .choice1:focus-within {
