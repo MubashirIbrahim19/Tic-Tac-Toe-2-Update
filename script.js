@@ -30,8 +30,9 @@ let winPattern = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+
 const X_O = () => {
-  startGame.classList.remove("startGame3");
+  startGame.classList.remove("startGame2");
   startGame.innerText = "START GAME";
 };
 
@@ -50,8 +51,6 @@ const start_game = () => {
   if (
     isValidChoice(userChoice1) &&
     isValidChoice(userChoice2) &&
-    isValidChoice(player1) &&
-    isValidChoice(player2) &&
     player1 != player2 &&
     userChoice1 !== userChoice2 &&
     userChoice1.length === 1 &&
@@ -59,8 +58,8 @@ const start_game = () => {
   ) {
     removeTheHide();
   } else {
+    startGame.classList.add("startGame2");
     startGame.innerText = "Input is empty or Incorrect";
-    startGame.classList.add("startGame3");
   }
 };
 
@@ -74,12 +73,7 @@ input2.addEventListener("click", () => {
 
 const isValidChoice = (myChoice) => {
   return (
-    myChoice === "X" ||
-    myChoice === "O" ||
-    myChoice === "o" ||
-    myChoice === "x" ||
-    myChoice === player1 ||
-    myChoice === player2
+    myChoice === "X" || myChoice === "O" || myChoice === "o" || myChoice === "x"
   );
 };
 startGame.addEventListener("click", start_game);
@@ -102,18 +96,21 @@ boxes.forEach((box, index) => {
   box.addEventListener("click", () => {
     count++;
     if (turn) {
+      console.log(index);
+
       box.innerText = userChoice1;
 
       box.style.color = "#f8ac07";
       turn = false;
     } else {
+      console.log(index);
+
       box.innerText = userChoice2;
 
       box.style.color = "#2c6fff";
       turn = true;
     }
 
-    moves.push(index);
     box.disabled = true;
     if (count === 9) {
       draw();

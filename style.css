@@ -82,17 +82,14 @@ body {
   bottom: 440px;
   right: 20px;
 }
-.startGame3 {
+.startGame:hover {
+  box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.5);
+  color: rgba(255, 69, 0, 1)
+}
+.startGame2 {
   background-color: rgb(255, 255, 145);
   color: red;
   cursor: default;
-}
-.startGame3:hover {
-  box-shadow: none;
-}
-.startGame:hover {
-  box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.5);
-  color: rgba(255, 69, 0, 1);
 }
 .name1 {
   height: 50px;
@@ -357,7 +354,6 @@ body {
   }
   .text {
     position: relative;
-    bottom: 0px;
   }
   .text1 {
     font-size: 35px;
