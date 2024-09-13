@@ -8,7 +8,6 @@ const text = document.querySelector(".text");
 const choice1 = document.querySelector(".choice1");
 const choice2 = document.querySelector(".choice2");
 const startGame = document.querySelector(".startGame");
-const startGame2 = document.querySelector(".startGame2");
 const back = document.querySelector(".back");
 const players_box = document.querySelector(".players_box");
 const input1 = document.querySelector(".name1");
@@ -31,18 +30,9 @@ let winPattern = [
   [3, 4, 5],
   [6, 7, 8],
 ];
-startGame2.addEventListener("click", () => {
-  startGame2.style.backgroundColor = "rgb(255, 255, 145)";
-  startGame2.style.color = "red";
-  startGame2.innerText = "Input is empty or incorrect";
-  startGame2.style.cursor = "default";
-  console.log(startGame2.innerText);
-  console.log(startGame2);
-});
-
 const X_O = () => {
-  startGame2.classList.add("hide");
-  console.log(startGame2);
+  startGame.classList.remove("startGame3");
+  startGame.innerText = "START GAME";
 };
 
 const removeTheHide = () => {
@@ -56,8 +46,7 @@ const start_game = () => {
   userChoice2 = choice2.value.toUpperCase();
   player1 = input1.value;
   player2 = input2.value;
-  console.log(`Player1 Name :${player1}`);
-  console.log(`Player2 Name :${player2}`);
+
   if (
     isValidChoice(userChoice1) &&
     isValidChoice(userChoice2) &&
@@ -70,13 +59,13 @@ const start_game = () => {
   ) {
     removeTheHide();
   } else {
-    startGame2.classList.remove("hide");
+    startGame.innerText = "Input is empty or Incorrect";
+    startGame.classList.add("startGame3");
   }
 };
 
 input1.addEventListener("click", () => {
   X_O();
-  console.log("remove");
 });
 
 input2.addEventListener("click", () => {
@@ -84,7 +73,6 @@ input2.addEventListener("click", () => {
 });
 
 const isValidChoice = (myChoice) => {
-  console.log(myChoice || "null");
   return (
     myChoice === "X" ||
     myChoice === "O" ||
@@ -100,46 +88,32 @@ choice1.addEventListener("click", () => {
   X_O();
   if (turn) {
     turn = false;
-    console.log(turn);
-    console.log(player1);
   }
 });
 choice2.addEventListener("click", () => {
   X_O();
   if (turn) {
     turn = true;
-    console.log(turn);
-    console.log(player2);
   } else {
     turn = true;
-    console.log(turn);
   }
 });
 boxes.forEach((box, index) => {
   box.addEventListener("click", () => {
-    console.log(`Count = ${count}`);
     count++;
     if (turn) {
-      console.log(userChoice1);
-      console.log(index);
-      console.log(turn);
       box.innerText = userChoice1;
-      console.log(box.innerText);
+
       box.style.color = "#f8ac07";
       turn = false;
-      console.log(player1);
     } else {
-      console.log(userChoice2);
-      console.log(index);
-      console.log(turn);
       box.innerText = userChoice2;
-      console.log(box.innerText);
+
       box.style.color = "#2c6fff";
       turn = true;
-      console.log(player2);
     }
+
     moves.push(index);
-    console.log(moves);
     box.disabled = true;
     if (count === 9) {
       draw();
@@ -153,7 +127,7 @@ let winnerChecker = () => {
     let pos1 = boxes[pattern[0]].innerText;
     let pos2 = boxes[pattern[1]].innerText;
     let pos3 = boxes[pattern[2]].innerText;
-    console.log(pattern);
+
     if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
       if (pos1 === pos2 && pos2 === pos3) {
         container.classList.add("hide");
@@ -161,7 +135,6 @@ let winnerChecker = () => {
         text.classList.add("hide");
         if (pos1 === userChoice1) {
           congratulation.innerText = `${player1} Won`;
-          console.log(userChoice1);
         } else {
           congratulation.innerText = `${player2} Won`;
           congratulation.style.color = "red";
@@ -186,7 +159,7 @@ const newGamereset = () => {
     text.classList.remove("hide");
     container.classList.add("hide");
     players_box.classList.remove("hide");
-    console.log(players_box);
+
     box.innerText = "";
     turn = true;
     box.disabled = false;
@@ -205,10 +178,10 @@ reset.addEventListener("click", newGamereset);
 back.addEventListener("click", () => {
   if (moves.length > 0) {
     const lastIndex = moves.pop();
-    console.log(lastIndex);
+
     boxes[lastIndex].innerText = "";
-    boxes[lastIndex].disabled = false; 
-    count--; 
-    turn = !turn; 
+    boxes[lastIndex].disabled = false;
+    count--;
+    turn = !turn;
   }
 });

@@ -57,8 +57,7 @@ body {
   font-weight: 550;
   border-radius: 50px;
 }
-.startGame,
-.startGame2 {
+.startGame {
   display: flex;
   align-items: center;
   text-align: center;
@@ -67,7 +66,7 @@ body {
   color: black;
   margin-top: 30px;
   cursor: pointer;
-  font-size: 55px;
+  font-size: 52px;
   font-family: Courier, monospace;
   font-weight: 550;
   letter-spacing: 2px;
@@ -78,13 +77,20 @@ body {
   border: 3px solid wheat;
 }
 
-.startGame,
-.startGame2 {
-  position: absolute;
-  top: 500px;
+.startGame {
+  position: relative;
+  bottom: 440px;
+  right: 20px;
 }
-.startGame:hover,
-.startGame2:hover {
+.startGame3 {
+  background-color: rgb(255, 255, 145);
+  color: red;
+  cursor: default;
+}
+.startGame3:hover {
+  box-shadow: none;
+}
+.startGame:hover {
   box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.5);
   color: rgba(255, 69, 0, 1);
 }
@@ -337,10 +343,11 @@ body {
     position: relative;
     left: 10%;
   }
-  .startGame,
-  .startGame2 {
+  .startGame {
     height: 30px;
-    font-size: 19px;
+    font-size: 17px;
+    right: 4px;
+    bottom: 250px;
   }
   .choice1:focus-within {
     border: 6px solid green;
@@ -464,11 +471,11 @@ body {
   }
   .choice1 {
     position: relative;
-    right: 30%;
+    right: 23%;
   }
   .choice2 {
     position: relative;
-    left: 20%;
+    left: 10%;
   }
   .boxes {
     height: 360px;
@@ -477,18 +484,16 @@ body {
   .option {
     font-size: 32px;
   }
-  .select {
-    width: 300px;
-  }
   .box {
     height: 110px;
     width: 110px;
     font-size: 70px;
   }
-  .startGame,
-  .startGame2 {
-    height: 45px;
-    font-size: 30px;
+  .startGame {
+    height: 40px;
+    font-size: 22px;
+    bottom: 250px;
+    right: 25px;
   }
   .choice1:focus-within {
     border: 6px solid green;
@@ -565,7 +570,7 @@ body {
   }
 }
 
-@media (min-width: 720px) and (max-width: 1024px) {
+@media (min-width: 720px) and (max-width: 1124px) {
   * {
     margin: 0;
     padding: 0;
@@ -613,11 +618,11 @@ body {
   }
   .choice1 {
     position: relative;
-    right: 55%;
+    right: 20%;
   }
   .choice2 {
     position: relative;
-    left: 30%;
+    left: 15%;
   }
   .boxes {
     height: 360px;
@@ -626,18 +631,18 @@ body {
   .option {
     font-size: 50px;
   }
-  .select {
-    width: 300px;
-  }
+ 
   .box {
     height: 130px;
     width: 130px;
     font-size: 80px;
   }
-  .startGame,
-  .startGame2 {
+  .startGame {
     height: 55px;
     font-size: 38px;
+    position: relative;
+    right: 0px;
+    bottom: 230px;
   }
   .choice1:focus-within {
     border: 8px solid green;
